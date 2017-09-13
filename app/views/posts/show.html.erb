@@ -1,0 +1,9 @@
+<%= render 'partials/header', title: 'View Post | Rails Posts App' %>
+
+<h1>Post show</h1>
+
+<h2><%= @post.title %></h2>
+<p><%= @post.content %></p>
+<small><%= @post.created_at %></small>
+
+<%= render 'partials/back' %>
