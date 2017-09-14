@@ -6,11 +6,11 @@
     <%= render 'partials/emssg', post: @post %>
     <p>
         <%= f.label :title %><br>
-        <%= f.text_field :title %>
+        <%= f.text_field :title, placeholder: "Title..", autofocus: true %>
     </p>
     <p>
         <%= f.label :content %><br>
-        <%= f.text_area :content %>
+        <%= f.text_area :content, placeholder: "Content..", autofocus: true %>
     </p>
     <p>
         <%= f.submit "Add Post" %>

@@ -12,12 +12,12 @@ class PostsController < ApplicationController
         @post = Post.new
     end
 
-    def create    
+    def create
         @post = Post.new(post_params)
         if @post.save
             redirect_to posts_path, :notice => "Post created!!"
         else
-            render 'new'        
+            render 'new'
         end
     end
 
