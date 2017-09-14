@@ -14,13 +14,13 @@ default: &default
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: root
-  password: <%= ENV['RAILS_DB_PASSWORD'] %>
+  password: <%= ENV['RAILS_DB_PASSWORD'] %>    # Your password
   host: localhost
   socket: C:\xampp\mysql\mysql.sock   # Change this if yours is different
 
 development:
   <<: *default
-  database: rails-posts-app
+  database: rails-post-app
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
