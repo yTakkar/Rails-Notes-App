@@ -17,7 +17,9 @@
     "js:dev": "webpack -d --watch",
     "js:build": "webpack -p --watch"
   },
-  "dependencies": {},
+  "dependencies": {
+    "jquery": "^3.2.1"
+  },
   "devDependencies": {
     "babel-core": "^6.24.1",
     "babel-loader": "^6.4.1",

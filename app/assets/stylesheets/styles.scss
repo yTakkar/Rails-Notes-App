@@ -1,0 +1,305 @@
+@import 'defaults';
+
+.header_loggedin{
+  background: $ff;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  position: fixed;
+  width: 100%;
+  height: 45px;
+  background: white;
+  z-index: 2;
+  top: 0px;
+
+  & a{
+    font-size: 14px;
+    color: $dark;
+    margin-left: 7px;
+    padding: 5px 12px;
+    border-radius: 3px;
+    display: inline-block;
+
+    &:hover{ background: $second_border; }
+
+    &:focus{ background: $second_border; }
+
+  }
+
+  & .left{
+    display: inline-block;
+    position: relative;
+    top: 8px;
+    left: 25px;
+  }
+
+  & .right {
+    display: inline-block;
+    position: absolute;
+    top: 8px;
+    right: 3%;
+  }
+
+}
+
+.notes_wrapper{ margin-top: 70px; }
+
+.note{
+  background: $ff;
+  padding: 10px;
+  display: block;
+  font-size: 14px;
+  border: 1px solid $header_border;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  overflow: auto;
+
+  &:hover{
+    border-color: $ee;
+  }
+
+  & .note_header{
+    margin-bottom: 7px;
+
+    & img{
+      height: 31px;
+      width: 31px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    & .note_h_left{
+      display: inline-block;
+      margin-left: 5px;
+      width: 90%;
+
+      & .note_username{
+        display: block;
+        color: $dark;
+        font-weight: 600;
+        position: relative;
+        top: 2px;
+      }
+
+      & .note_time{
+        font-size: 13px;
+        color: $d_light;
+        position: relative;
+        top: -1px;
+      }
+
+    }
+
+  }
+
+  & .note_title, & .note_content{
+    color: $dark;
+  }
+
+  & .note_title{
+    margin-bottom: 4px;
+    font-weight: 600;
+  }
+
+  & .note_actions {
+    position: relative;
+    float: right;
+
+    & a {
+      display: inline-block;
+      padding: 3px 10px;
+    }
+
+  }
+}
+
+.page_end{
+  padding: 10px;
+  text-align: center;
+  font-size: 14px;
+  margin-top: 10px;
+  color: $d_light;
+  cursor: pointer;
+  border-radius: 3px;
+  border: 1px solid $fb;
+  &:hover{ border: 1px solid $ee; }
+}
+
+.home{
+  position: relative;
+  width: 607px;
+  margin-left: 365px;
+  margin-bottom: 60px;
+  & .home_info{
+    margin-bottom: 10px;
+    background: $ff;
+    padding: 14px 10px;
+    border: 1px solid $header_border;
+    border-radius: 3px;
+    font-size: 15px;
+    & a{
+      position: absolute;
+      right: 10px;
+      padding: 4px 12px;
+      top: 10px;
+    }
+  }
+}
+
+// EDIT
+.edit{
+  position: relative;
+  width: 400px;
+  left: 490px;
+  font-size: 14px;
+  top: 40px;
+
+  & form > * {
+    display: block;
+    width: 100%;
+    margin-top: 15px;
+  }
+
+  & form .flash {
+    width: inherit !important;
+    margin-top: inherit !important;
+  }
+
+  & .eb_btns{
+    text-align: right;
+
+    & input[type="submit"]{
+      display: inline-block;
+      margin-right: 38px;
+      padding: 7px 20px;
+      font-size: 14px;
+    }
+
+  }
+
+  & .edit_span{
+    color: $d_light;
+    display: block;
+    position: relative;
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+
+  & .edit_info{
+
+    & img{
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      position: relative;
+      display: inline-block;
+    }
+
+    & span {
+      position: relative;
+      top: -12px;
+      left: 8px;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+  }
+
+  & input[type='text'],
+  & input[type='email'],
+  textarea{
+    width: 90%;
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  & textarea{
+    height: 200px;
+  }
+
+}
+
+// BLOG PAGE
+.blog{
+  position: relative;
+  font-size: 14px;
+  background: #fff;
+  padding: 15px;
+  border-radius: 3px;
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,.1);
+  top: 80px;
+
+  & > * {
+    display: block;
+    margin-bottom: 15px;
+  }
+
+  & .blog_actions {
+    text-align: right;
+    margin-bottom: 0px;
+
+    & a {
+      padding: 4px 10px;
+      display: inline-block;
+    }
+  }
+
+  & .blog_c {
+
+    & .blog_title {
+      font-weight: 600;
+      font-size: 17px;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    & .blog_content {
+      display: block;
+    }
+
+  }
+
+
+}
+
+.flash{
+  position: fixed;
+  background: #333;
+  left: 2%;
+  color: $ff;
+  border-radius: 3px;
+  padding: 12px 80px 12px 25px;
+  font-size: 15px;
+  cursor: pointer;
+  text-align: left;
+  z-index: 3;
+  top: 90%;
+
+  & .flash_mssg {
+    position: relative;
+  }
+
+  & .flash_icon {
+    position: absolute;
+    display: inline-block;
+    padding: 3px;
+    border-radius: 2px;
+    top: 10px;
+    right: 10px;
+
+    &:hover {
+      background: #563d3d;
+    }
+
+    & i {
+      font-size: 20px;
+    }
+
+  }
+
+}
+
+// HOME & ABOUT PAGES
+.welcome {
+  text-align: center;
+  top: 60px;
+  position: relative;
+}

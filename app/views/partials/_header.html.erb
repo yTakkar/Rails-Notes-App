@@ -1,8 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
-    <link rel="icon" href="/images/favicon.png" type="image/png">
+    <title><%= title %> | Rails Notes App</title>
+    <!-- <link rel="icon" href="/images/favicon.png" type="image/png"> -->
+    <%= favicon_link_tag 'favicon.ico' %>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -10,14 +16,15 @@
 
   <body>
 
-    <% flash.each do |key, value| %>
-      <p><%= value %></p>
+    <% if flash.any? %>
+      <%= render 'partials/emssg', mssg: flash[:notice] %>
     <% end %>
 
-    <div>
-        <ul>
-            <li><%= link_to "Home", root_path %></li>
-            <li><%= link_to "About", about_path %></li>
-            <li><%= link_to "Posts", posts_path %></li>
-        </ul>
+    <div class="header_loggedin">
+      <div class="left">
+        <%= link_to "Home", root_path %>
+        <%= link_to "About", about_path %>
+        <%= link_to "Notes", posts_path %>
+        <%= link_to "Create Note", new_post_path %>
+      </div>
     </div>

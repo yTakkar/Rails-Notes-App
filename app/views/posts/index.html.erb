@@ -1,16 +1,54 @@
-<%= render 'partials/header', title: 'Posts | Rails Posts App' %>
+<%= render 'partials/header', title: 'Notes' %>
 
-<h1>All Posts</h1>
+<div class="home">
 
-<% @posts.each do |el| %>
-    <h2><%= link_to el.title, show_post_path(el.id) %></h2>
-    <p><%= el.content %></p>
-    <small><%= el.created_at %></small>
-    <p>
-        <%= link_to "Edit", edit_post_path(el.id) %>
-        <%= link_to "Delete", delete_post_path(el.id), :data => { :confirm => "Are you sure?" }, :method => :delete %>
-    </p>
-    <hr />
-<% end %>
+  <div class="home_info">
+    <span><%= @posts.length %> Notes</span>
+    <%= link_to "Create Note", new_post_path, class: "pri_btn" %>
+  </div>
 
-<p><%= link_to "Add A New Post", new_post_path %></p>
+  <% unless @posts.empty? %>
+    <% @posts.each do |el| %>
+      <div class="note">
+        <div class="note_header common_header">
+          <%= image_tag "ruby-red.png" %>
+          <div class="note_h_left">
+            <span class="note_username">You..</span>
+            <span class='note_time'><%= el.created_at %></span>
+          </div>
+        </div>
+        <div class="note_title">
+          <span><%= el.title %></span>
+        </div>
+        <div class="note_content">
+          <span><%= el.content %></span>
+        </div>
+        <div class="note_actions">
+          <%= link_to "Edit", edit_post_path(el.id), class: "sec_btn" %>
+          <%=
+            link_to "Delete",
+            delete_post_path(el.id),
+            class: "sec_btn",
+            :data => { :confirm => "Are you sure??" },
+            :method => :delete
+          %>
+          <%= link_to "View", show_post_path(el.id), class: "pri_btn" %>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+
+  <% if @posts.empty? %>
+    <div class='home_last_mssg'>
+      <%= image_tag "large.jpg" %>
+      <span>No notes for you. Go ahead and create one!!</span>
+    </div>
+  <% end %>
+
+  <% unless @posts.empty? %>
+    <div class="page_end">
+      <span>Looks like you've reached the end</span>
+    </div>
+  <% end %>
+
+</div>

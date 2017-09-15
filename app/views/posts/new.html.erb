@@ -1,20 +1,31 @@
-<%= render 'partials/header', title: 'New Post | Rails Posts App' %>
+<%= render 'partials/header', title: 'New Post' %>
 
-<h1>New Post!!</h1>
+<div class="edit">
 
-<%= form_for @post, url: { action: 'create' } do |f| %>
-    <%= render 'partials/emssg', post: @post %>
-    <p>
-        <%= f.label :title %><br>
-        <%= f.text_field :title, placeholder: "Title..", autofocus: true %>
-    </p>
-    <p>
-        <%= f.label :content %><br>
-        <%= f.text_area :content, placeholder: "Content..", autofocus: true %>
-    </p>
-    <p>
-        <%= f.submit "Add Post" %>
-    </p>
-<% end %>
+  <div class="edit_info">
+    <%= image_tag  "ruby-red.png", class: "edit_img", alt: "Your avatar" %>
+    <span>Create Note</span>
+  </div>
 
-<%= render 'partials/back' %>
+  <%= form_for @post, url: { action: 'create' } do |f| %>
+
+    <% if @post.errors.any? %>
+      <%= render 'partials/emssg', mssg: @post.errors.full_messages[0] %>
+    <% end %>
+
+    <div class="eu_div">
+      <span class='edit_span'>Title</span>
+      <%= f.text_field :title, class: "e_username", placeholder: 'Title..', autofocus: true, spellcheck:false, autocomplete: false %>
+    </div>
+    <div class="eb_div">
+      <span class='edit_span'>Content</span>
+      <%= f.text_area :content, placeholder: "Content..", autofocus: true, class: "e_bio", spellcheck:false, autocomplete: false %>
+    </div>
+    <div class="eb_btns">
+      <%= f.submit "Create Note" %>
+    </div>
+
+  <% end %>
+
+</div>
+
