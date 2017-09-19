@@ -16,7 +16,7 @@ default: &default
   username: root
   password: <%= ENV['RAILS_DB_PASSWORD'] %>    # Your password
   host: localhost
-  socket: C:\xampp\mysql\mysql.sock   # Change this if yours is different
+  socket: <%= ENV['RAILS_SOCKET'] %>   # Your socket
 
 development:
   <<: *default

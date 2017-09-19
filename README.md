@@ -12,8 +12,8 @@ A Post-App created with Rails!!
 2. Create the following environment variable:
 ```javascript
 RAILS_DB_PASSWORD="DB PASSWORD"
+RAILS_SOCKET="MySQL Socket"
 ```
-3. Go to `config/database.yml` file, line no. `19`, and change the socket if yours is different!!
 
 5. Start the server
 ```javascript
