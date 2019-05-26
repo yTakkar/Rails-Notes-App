@@ -1,6 +1,8 @@
 # Rails-Notes-App
 A Post-App created with Rails!!
 
+**No longer maintained.**
+
 # Quick Links
 1. [Screenshots](#screenshots)
 2. [Usage](#usage)
